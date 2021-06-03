@@ -198,6 +198,11 @@ public class GameField extends JPanel implements ActionListener
             {
                 timer.restart();
             }
+            if(key == KeyEvent.VK_ESCAPE)
+            {
+                inGame = true;
+                MyWindow mw = new MyWindow();
+            }
         }
     }
 }
