@@ -205,7 +205,7 @@ public class Game extends JPanel implements ActionListener
             if(key == KeyEvent.VK_ESCAPE)
             {
                 inGame = true;
-                MyWindow mw = new MyWindow();
+                MyWindow myform = new MyWindow();
             }
         }
     }

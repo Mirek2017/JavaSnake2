@@ -13,6 +13,6 @@ public class MyWindow extends JFrame
     }
     public static void main(String[] args)
     {
-        MyWindow mw = new MyWindow();
+        MyWindow myform = new MyWindow();
     }
 }
