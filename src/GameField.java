@@ -32,7 +32,7 @@ public class GameField extends JPanel implements ActionListener
         setBackground(Color.BLACK);
         LoadImages();
         Begin();
-        addKeyListener(new FieldKeyListener());
+        addKeyListener(new KeyListener());
         setFocusable(true);
     }
     public void Begin()
@@ -159,7 +159,7 @@ public class GameField extends JPanel implements ActionListener
         }
         repaint();
     }
-    class FieldKeyListener extends KeyAdapter
+    class KeyListener extends KeyAdapter
     {
         @Override
         public void keyPressed(KeyEvent e)
