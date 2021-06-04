@@ -118,14 +118,14 @@ class Game extends JPanel implements ActionListener
         else
         {
             String str2 = "Game Over";
-            String str3 = "Press 'esc' to continue the game";
+            String str3 = "Press 'esc' to restart the game";
             Font f = new Font("Arial",Font.BOLD + Font.ITALIC, 36);
             Font fа = new Font("Arial",Font.BOLD + Font.ITALIC, 24);
             g.setFont(f);
             g.setColor(Color.white);
             g.drawString(str2,140,220);
             g.setFont(fа);
-            g.drawString(str3,45,260);
+            g.drawString(str3,55,260);
         }
     }
     @Override
