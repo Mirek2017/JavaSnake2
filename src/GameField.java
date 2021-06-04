@@ -78,7 +78,7 @@ public class GameField extends JPanel implements ActionListener
         else
         {
             String str2 = "Game Over";
-            String str3 = "Press the 'esc' to continue the game";
+            String str3 = "Press 'esc' to continue the game";
             Font f = new Font("Arial",Font.BOLD + Font.ITALIC, 36);
             Font fа = new Font("Arial",Font.BOLD + Font.ITALIC, 24);
             g.setFont(f);
