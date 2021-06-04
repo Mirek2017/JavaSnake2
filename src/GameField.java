@@ -93,19 +93,19 @@ public class GameField extends JPanel implements ActionListener
         }
         if(left)
         {
-            x[0] -= DOT_SIZE;
+            x[0] = x[0] - DOT_SIZE;
         }
         if(right)
         {
-            x[0] += DOT_SIZE;
+            x[0] = x[0] + DOT_SIZE;
         }
         if(up)
         {
-            y[0] -= DOT_SIZE;
+            y[0] = y[0] - DOT_SIZE;
         }
         if(down)
         {
-            y[0] += DOT_SIZE;
+            y[0] = y[0] + DOT_SIZE;
         }
     }
     public void CheckApple()
