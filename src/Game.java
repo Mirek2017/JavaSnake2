@@ -9,7 +9,7 @@ import java.util.Random;
 public class Game extends JPanel implements ActionListener
 {
     private String str = "Score: ";
-    private Image dot;
+    private Image point;
     private Image apple;
     private int appleX;
     private int appleY;
@@ -18,7 +18,7 @@ public class Game extends JPanel implements ActionListener
     private final int ALL_DOTS = 200;
     private int SCORE = 0;
     private int time = 180;
-    private int dots;
+    private int points;
     private Timer timer;
     private boolean left = false;
     private boolean right = true;
@@ -37,8 +37,8 @@ public class Game extends JPanel implements ActionListener
     }
     public void Begin()
     {
-        dots = 3;
-        for(int i = 0; i < dots; i++)
+        points = 3;
+        for(int i = 0; i < points; i++)
         {
             x[i] = 48 - i*DOT_SIZE;
             y[i] = 48;
@@ -57,11 +57,11 @@ public class Game extends JPanel implements ActionListener
         ImageIcon iia = new ImageIcon("apple.png");
         apple = iia.getImage();
         ImageIcon iid = new ImageIcon("dot.png");
-        dot = iid.getImage();
+        point = iid.getImage();
     }
     public void Go()
     {
-        for(int i = dots; i > 0; i--)
+        for(int i = points; i > 0; i--)
         {
             x[i] = x[i - 1];
             y[i] = y[i - 1];
@@ -90,9 +90,9 @@ public class Game extends JPanel implements ActionListener
         if(inGame)
         {
             g.drawImage(apple,appleX,appleY,this);
-            for(int i = 0; i < dots; i++)
+            for(int i = 0; i < points; i++)
             {
-                g.drawImage(dot,x[i],y[i],this);
+                g.drawImage(point,x[i],y[i],this);
             }
             Font f = new Font("Arial",Font.BOLD + Font.ITALIC, 20);
             g.setFont(f);
@@ -127,7 +127,7 @@ public class Game extends JPanel implements ActionListener
     {
         if(x[0] == appleX && y[0] == appleY)
         {
-            dots++;
+            points++;
             SCORE = SCORE + 10;
             if(time <= 200 && time >= 60)
             {
@@ -139,7 +139,7 @@ public class Game extends JPanel implements ActionListener
     }
     public void CheckBorder()
     {
-        for(int i = dots; i > 0; i--)
+        for(int i = points; i > 0; i--)
         {
             if(i > 4 && x[0] == x[i] && y[0] == y[i])
             {
