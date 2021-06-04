@@ -8,18 +8,16 @@ import java.util.Random;
 
 public class GameField extends JPanel implements ActionListener
 {
-    private final int SIZE = 480;
-    private final int DOT_SIZE = 16;
-    private final int ALL_DOTS = 400;
-    private int SCORE = 0;
-    private int time = 180;
     private String str = "Score: ";
     private Image dot;
     private Image apple;
     private int appleX;
     private int appleY;
-    private int[] x = new int[ALL_DOTS];
-    private int[] y = new int[ALL_DOTS];
+    private final int SIZE = 480;
+    private final int DOT_SIZE = 16;
+    private final int ALL_DOTS = 200;
+    private int SCORE = 0;
+    private int time = 180;
     private int dots;
     private Timer timer;
     private boolean left = false;
@@ -27,6 +25,8 @@ public class GameField extends JPanel implements ActionListener
     private boolean up = false;
     private boolean down = false;
     private boolean inGame = true;
+    private int[] x = new int[ALL_DOTS];
+    private int[] y = new int[ALL_DOTS];
     public GameField()
     {
         setBackground(Color.BLACK);
@@ -78,10 +78,14 @@ public class GameField extends JPanel implements ActionListener
         else
         {
             String str2 = "Game Over";
+            String str3 = "Press the 'esc' to continue the game";
             Font f = new Font("Arial",Font.BOLD + Font.ITALIC, 36);
+            Font fа = new Font("Arial",Font.BOLD + Font.ITALIC, 24);
             g.setFont(f);
             g.setColor(Color.white);
             g.drawString(str2,140,220);
+            g.setFont(fа);
+            g.drawString(str3,25,260);
         }
     }
     public void Go()
