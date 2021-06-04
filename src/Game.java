@@ -59,6 +59,30 @@ public class Game extends JPanel implements ActionListener
         ImageIcon iid = new ImageIcon("dot.png");
         dot = iid.getImage();
     }
+    public void Go()
+    {
+        for(int i = dots; i > 0; i--)
+        {
+            x[i] = x[i - 1];
+            y[i] = y[i - 1];
+        }
+        if(left)
+        {
+            x[0] = x[0] - DOT_SIZE;
+        }
+        if(right)
+        {
+            x[0] = x[0] + DOT_SIZE;
+        }
+        if(up)
+        {
+            y[0] = y[0] - DOT_SIZE;
+        }
+        if(down)
+        {
+            y[0] = y[0] + DOT_SIZE;
+        }
+    }
     @Override
     protected void paintComponent(Graphics g)
     {
@@ -88,29 +112,16 @@ public class Game extends JPanel implements ActionListener
             g.drawString(str3,45,260);
         }
     }
-    public void Go()
+    @Override
+    public void actionPerformed(ActionEvent e)
     {
-        for(int i = dots; i > 0; i--)
+        if(inGame)
         {
-            x[i] = x[i - 1];
-            y[i] = y[i - 1];
+            CheckApple();
+            CheckBorder();
+            Go();
         }
-        if(left)
-        {
-            x[0] = x[0] - DOT_SIZE;
-        }
-        if(right)
-        {
-            x[0] = x[0] + DOT_SIZE;
-        }
-        if(up)
-        {
-            y[0] = y[0] - DOT_SIZE;
-        }
-        if(down)
-        {
-            y[0] = y[0] + DOT_SIZE;
-        }
+        repaint();
     }
     public void CheckApple()
     {
@@ -151,17 +162,6 @@ public class Game extends JPanel implements ActionListener
         {
             inGame = false;
         }
-    }
-    @Override
-    public void actionPerformed(ActionEvent e)
-    {
-        if(inGame)
-        {
-            CheckApple();
-            CheckBorder();
-            Go();
-        }
-        repaint();
     }
     class KeyListener extends KeyAdapter
     {
