@@ -6,7 +6,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
-public class GameField extends JPanel implements ActionListener
+public class Game extends JPanel implements ActionListener
 {
     private String str = "Score: ";
     private Image dot;
@@ -27,7 +27,7 @@ public class GameField extends JPanel implements ActionListener
     private boolean inGame = true;
     private int[] x = new int[ALL_DOTS];
     private int[] y = new int[ALL_DOTS];
-    public GameField()
+    public Game()
     {
         setBackground(Color.BLACK);
         LoadImages();
@@ -85,7 +85,7 @@ public class GameField extends JPanel implements ActionListener
             g.setColor(Color.white);
             g.drawString(str2,140,220);
             g.setFont(fа);
-            g.drawString(str3,25,260);
+            g.drawString(str3,45,260);
         }
     }
     public void Go()
